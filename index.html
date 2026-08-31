@@ -31,8 +31,8 @@
 
     --yellow:      #FFD23F;
     --yellow-soft: #FFF0B3;
-    --sky:         #6EC6FF;
-    --sky-soft:    #E8F6FF;
+    --lilac:       #B79CED;
+    --lilac-soft:  #F1E9FF;
     --mint:        #7CE7C4;
     --coral:       #FF5DA2;
     --pink:        #D6336C;
@@ -60,7 +60,7 @@
   /* ---- outer frame ---- */
   .frame{
     width:100%;max-width:460px;
-    background:var(--sky-soft);
+    background:var(--lilac-soft);
     border-radius:22px;
     border:3px solid var(--ink);
     padding:16px;
@@ -147,7 +147,7 @@
   /* ---- phone lock-screen notifications (step 0.5) ---- */
   .phone-bg{
     flex:1;display:flex;flex-direction:column;align-items:center;
-    background:linear-gradient(180deg,var(--sky-soft),var(--pink-soft));
+    background:linear-gradient(180deg,var(--lilac-soft),var(--pink-soft));
     padding:26px 18px 30px;
   }
   .phone-time{color:var(--ink);text-align:center;margin-bottom:22px}
@@ -216,7 +216,7 @@
     font-family:'Work Sans', sans-serif; font-size:.76rem; font-weight:600; color:var(--ink); cursor:pointer; transition:all .12s ease;
   }
   .tone-chip:hover, .tone-chip.active{ background:var(--yellow); transform:translateY(-1px); box-shadow:2px 2px 0 var(--ink); }
-  .ai-box{ margin-top:14px; background:var(--sky-soft); border:2.5px solid var(--ink); border-radius:14px; padding:16px; }
+  .ai-box{ margin-top:14px; background:var(--lilac-soft); border:2.5px solid var(--ink); border-radius:14px; padding:16px; }
   .ai-box-head{ display:flex; align-items:center; gap:8px; margin-bottom:11px; }
   .ai-pill{ display:inline-flex; align-items:center; gap:4px; padding:3px 10px; background:var(--ink); border-radius:100px; font-family:'Work Sans',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--paper-2); }
   .ai-hint{ font-size:.77rem; color:var(--ink-soft); font-weight:500; }
@@ -232,6 +232,16 @@
   .ai-dots span:nth-child(2){ animation-delay:.18s; }
   .ai-dots span:nth-child(3){ animation-delay:.36s; }
   @keyframes aiDot{ 0%,100%{ transform:translateY(0); opacity:.5; } 50%{ transform:translateY(-4px); opacity:1; } }
+
+  /* ---- welcome gif card ---- */
+  .gif-card{
+    width:210px;background:var(--paper-2);padding:10px 10px 16px;border:2px solid var(--ink);
+    border-radius:16px;box-shadow:5px 5px 0 var(--ink);transform:rotate(-2deg);position:relative;
+  }
+  .gif-card img.gif{
+    width:100%;height:160px;object-fit:cover;border-radius:10px;display:block;
+    background:var(--lilac-soft);border:1.5px solid var(--ink);
+  }
 
   /* shared-link boot state — kills the form flash before JS decides what to show */
   html.viewer-boot #step-intake{display:none !important}
@@ -374,7 +384,7 @@ Happy Birthday. Go make a wish. 🎉</textarea>
           </div>
         </div>
         <div class="notif">
-          <div class="notif-ico" style="background:var(--sky-soft)">💧</div>
+          <div class="notif-ico" style="background:var(--lilac-soft)">💧</div>
           <div class="notif-body">
             <div class="notif-top"><span>Reminder</span><span>6m</span></div>
             <div class="notif-sender">Hydration check</div>
@@ -431,17 +441,10 @@ Happy Birthday. Go make a wish. 🎉</textarea>
       <div class="font-script fade-up" style="font-size:29px;color:var(--pink);margin-bottom:4px">welcome, birthday star</div>
       <p class="fade-up" style="color:var(--ink-soft);font-size:12px;margin-bottom:22px;letter-spacing:.3px">a little something, just for you</p>
 
-      <div class="fade-up" style="width:200px;background:var(--paper-2);padding:10px 10px 16px;border:2px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);transform:rotate(-2deg);position:relative">
+      <div class="gif-card fade-up">
         <div style="position:absolute;top:-12px;left:-12px;font-size:22px;transform:rotate(-8deg)">🎉</div>
         <div style="position:absolute;top:-10px;right:-14px;font-size:18px;transform:rotate(10deg)">🎈</div>
-        <svg viewBox="0 0 200 150" style="width:100%;border-radius:10px;display:block;background:var(--sky-soft)">
-          <circle cx="55" cy="55" r="26" fill="var(--coral)"/><line x1="55" y1="81" x2="55" y2="120" stroke="var(--ink)" stroke-width="2"/>
-          <circle cx="105" cy="40" r="26" fill="var(--yellow)"/><line x1="105" y1="66" x2="105" y2="120" stroke="var(--ink)" stroke-width="2"/>
-          <circle cx="150" cy="60" r="24" fill="var(--mint)"/><line x1="150" y1="84" x2="150" y2="120" stroke="var(--ink)" stroke-width="2"/>
-          <circle cx="30" cy="100" r="4" fill="var(--pink)"/><circle cx="170" cy="30" r="4" fill="var(--pink)"/>
-          <circle cx="180" cy="110" r="4" fill="var(--coral)"/><circle cx="15" cy="35" r="4" fill="var(--yellow)"/>
-          <rect x="20" y="120" width="160" height="26" rx="4" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/>
-        </svg>
+        <img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyNTdzYWhxZWtvdW14NTI0Z2t6NmhsMnVnN200NWVpYmUzYXd6cTU4NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOxfcsFhVkd0UOsdW/giphy.gif" alt="Birthday celebration" />
         <div style="position:absolute;bottom:-10px;right:-10px;font-size:20px;transform:rotate(-6deg)">🎂</div>
       </div>
 
